@@ -1,17 +1,48 @@
-import React from 'react'
+"use client";
+import Image from "next/image";
+import React from "react";
 
 const Improvement = () => {
   return (
-    <div className='container py-20'>
-        <div className='heading mx-auto w-4/5'>
-            <span className='font-semibold text-base text-black'>Wrong with self-improvement & how we're fixing it</span>
-            <h1 className='text-black font-bold text-5xl pt-2'>Self Improvement. Ugh.</h1>
-        </div>
-        <div className='progress-bar'>
+    <div className="container py-20 pb-32">
+      <div className="heading mx-auto w-4/5">
+        <span className="font-semibold text-lg text-black">
+          Wrong with self-improvement & how we're fixing it
+        </span>
+        <h1 className="text-black font-bold text-5xl flex justify-start items-center">
+          Self Improvement. Ugh.
+          <div className="mb-5 pl-4">
+            <Image src="/assets/Saly-10.png" width={100} height={100} alt="" />
+          </div>
+        </h1>
+      </div>
+      <div className="progress-bar">
 
+      </div>
+      <div className="mx-auto w-2/4 pt-6">
+        <div className="pb-4">
+        <h3 className="text-black font-bold text-2xl">it's not as easy as 1-2-3</h3>
+        <p className="text-black font-normal text-xl w-4/5 pt-4">The journey of change may be long , but our sessions are quick. We get to point and tell you do what you wanna do</p>
         </div>
+        <div className="pb-4">
+        <h3 className="text-black font-bold text-2xl">it's not as easy as 1-2-3</h3>
+        <p className="text-black font-normal text-xl w-4/5 pt-4">The journey of change may be long , but our sessions are quick. We get to point and tell you do what you wanna do</p>
+        </div>
+        <div className="pb-4">
+        <h3 className="text-black font-bold text-2xl">it's not as easy as 1-2-3</h3>
+        <p className="text-black font-normal text-xl w-4/5 pt-4">The journey of change may be long , but our sessions are quick. We get to point and tell you do what you wanna do</p>
+        </div>
+        <div className="pb-4">
+        <h3 className="text-black font-bold text-2xl">it's not as easy as 1-2-3</h3>
+        <p className="text-black font-normal text-xl w-4/5 pt-4">The journey of change may be long , but our sessions are quick. We get to point and tell you do what you wanna do</p>
+        </div>
+        <div className="pb-4">
+        <h3 className="text-black font-bold text-2xl">it's not as easy as 1-2-3</h3>
+        <p className="text-black font-normal text-xl w-4/5 pt-4">The journey of change may be long , but our sessions are quick. We get to point and tell you do what you wanna do</p>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Improvement
+export default Improvement;

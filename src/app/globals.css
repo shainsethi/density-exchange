@@ -9,3 +9,15 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
+.introduction{
+  background: #FAE8DC;
+}
+
+.testimonials{
+  background: #EDF8FE;
+}
+
+.work{
+  background: #F3F1FF;
+}

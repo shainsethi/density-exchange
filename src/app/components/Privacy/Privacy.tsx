@@ -2,7 +2,7 @@ import React from "react";
 
 const Privacy = () => {
   return (
-    <div className="container text-center mx-auto">
+    <div className="container text-center mx-auto py-40">
       <h5 className="text-basic text-black font-semibold">
         We take privacy seriously
       </h5>

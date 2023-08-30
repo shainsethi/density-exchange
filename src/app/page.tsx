@@ -27,6 +27,7 @@ export default function Home() {
       <Work />
       <Vacancies />
       <Footer />
+      
     </main>
   )
 }
