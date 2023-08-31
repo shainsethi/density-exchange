@@ -38,7 +38,7 @@ body {
 .line{
   position: absolute;
   z-index: 2;
-  left: calc(50% - 1px);
+  left: calc(20% - 1px);
   width: 2px;
   top: 0px;
   bottom: -50px;
