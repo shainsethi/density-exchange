@@ -1,13 +1,82 @@
 "use client";
+import { motion , useAnimation } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Work = () => {
+    const { ref , inView } = useInView({
+        threshold: 0.3
+      });
+
+      const animation = useAnimation();
+      const slide = useAnimation();
+      const left = useAnimation();
+      const right = useAnimation();
+    
+      useEffect(()=>{
+        if(inView){
+          left.start({
+            x: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 30,
+            }
+          })
+          right.start({
+            x: 0,
+            opacity: 1,
+            transition: {
+              type: 'spring',
+              stiffness: 30,
+            }
+          })
+          slide.start({
+            y: 0,
+            opacity: 1,
+            transition: {
+              type: 'spring',
+              stiffness: 30,
+              delay: 0.5,
+              duration: 1
+            }
+          })
+          animation.start({
+            x: 0,
+            opacity: 1,
+            transition: {
+              type: 'spring',
+              stiffness: 30,
+              when: 'beforeChildren',
+              duration: 1,
+              delay: 0.5
+            }
+          })
+        }
+        if(!inView){
+            right.start({
+                x: '500px',
+                opacity: 0,
+            })
+          left.start({
+            x: '-100vw'
+          })
+          slide.start({
+            y: '100px',
+            opacity: 0
+          })
+          animation.start({
+            x: '-100vw',
+            opacity: 0,
+          })
+        }
+      },[inView])
+
   return (
-    <div className="container rounded-3xl w-2/3 mx-auto py-20 work px-20 flex ">
+    <motion.div ref={ref} className="container rounded-3xl w-2/3 mx-auto py-20 work px-20 flex ">
       <div className="left-side">
-        <h1 className="text-5xl text-black font-bold pb-8">Work with us</h1>
-        <div className=" flex flex-col w-8/12 justify-center items-center rounded-3xl">
+        <motion.h1 animate={left} className="text-5xl text-black font-bold pb-8">Work with us</motion.h1>
+        <motion.div animate={left} className="flex flex-col w-8/12 justify-center items-center rounded-3xl">
           <div className=" bg-white p-8 pt-3 rounded-t-3xl rounded-tr-3xl">
             <Image src="/assets/Saly-1.png" width={100} height={100} alt="" />
             <h4 className="text-3xl font-bold text-black py-2">About</h4>
@@ -18,17 +87,17 @@ const Work = () => {
             </p>
           </div>
           <div className=" bg-fuchsia-100 p-8 rounded-bl-3xl rounded-b-3xl">
-            <h4 className="text-3xl font-bold text-black py-2">Product</h4>
+            <motion.h4  className="text-3xl font-bold text-black py-2">Product</motion.h4>
             <p className="text-lg text-gray-500 font-normal">
               Sure, you could spend ages reading books or sitting in seminarson
               how to become a better spouse , parent or manager- like we did...
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="right-side">
-        <h1 className="ahead text-5xl font-bold pb-8">ahead</h1>
-        <div className="right-heading flex flex-col  gap-7 overflow-y-scroll h-[36rem]">
+        <motion.h1 animate={right} className="ahead text-5xl font-bold pb-8">ahead</motion.h1>
+        <motion.div animate={slide} className="right-heading flex flex-col  gap-7 overflow-y-scroll h-[36rem]">
           {new Array(10).fill("mapped-item").map((item, i) => (
             <div key={item + i} className=" bg-white p-8 rounded-3xl">
               <h4 className="text-xl font-semibold text-black py-2">
@@ -40,9 +109,9 @@ const Work = () => {
               </p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
