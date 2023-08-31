@@ -8,7 +8,7 @@ import slay from "../../../../public/assets/Saly.png";
 const CrouselHeading = () => {
 
   const { ref , inView } = useInView({
-    threshold: 0.3
+    threshold: 0.4
   });
   const animation = useAnimation();
   const slide = useAnimation();
@@ -27,7 +27,9 @@ const CrouselHeading = () => {
         opacity: 1,
         transition: {
           type: 'spring',
-          stiffness: 50
+          stiffness: 30,
+          delay: 0.5,
+          duration: 1
         }
       })
       animation.start({
@@ -35,7 +37,10 @@ const CrouselHeading = () => {
         opacity: 1,
         transition: {
           type: 'spring',
-          stiffness: 50,
+          stiffness: 30,
+          when: 'beforeChildren',
+          duration: 1,
+          delay: 0.5
         }
       })
     }

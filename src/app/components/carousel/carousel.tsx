@@ -21,7 +21,9 @@ function Carousel() {
         opacity: 1,
         transition: {
           type: 'spring',
-          stiffness: 40
+          stiffness: 20,
+          delay: 0.7,
+          duration: 2,
         }
       })
     }
