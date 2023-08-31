@@ -23,7 +23,8 @@ const Intro = () => {
         opacity: 1,
         transition: {
           type: 'spring', 
-          stiffness: 60,
+          stiffness: 40,
+          when: 'beforeChildren'
         }
       })
       right.start({
@@ -68,7 +69,7 @@ const Intro = () => {
         opacity: 0
       })
       slide.start({
-        y: '-100vw',
+        y: '-100px',
         opacity: 0
       })
       animation.start({
@@ -90,10 +91,10 @@ const Intro = () => {
     <motion.div ref={ref}>
     <div  className="container rounded-3xl w-11/12 mx-auto mt-28 flex justify-between items-center py-12 introduction px-20">
       <div className="heading pt-10 w-2/4 px-8 relative ">
-        <motion.div animate={left} exit={{ x: -300 , opacity: 0  }} className="text-lg text-black font-semibold ">
+        <motion.div animate={slide} exit={{ x: -300 , opacity: 0  }} className="text-lg text-black font-semibold ">
           Built out of frustation
         </motion.div>
-        <motion.h1 animate={slide} exit={{ x: -300, opacity: 0 }} className="text-black font-bold text-5xl pt-4 ">
+        <motion.h1 animate={left} exit={{ x: -300, opacity: 0 }} className="text-black font-bold text-5xl pt-4 ">
           Meet the ahead app
         </motion.h1>
         <motion.div className=""  animate={down}  exit={{ x: 300, opacity: 0 }}>
