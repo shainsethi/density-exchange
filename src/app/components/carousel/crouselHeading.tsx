@@ -1,72 +1,71 @@
 "use client";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation} from "framer-motion";
 import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import slay from "../../../../public/assets/Saly.png";
 
 const CrouselHeading = () => {
 
-    const headingVariant = {
-    hidden: {
-      x: -1000,
-      scale: 0,
-    },
-    visible: {
-      x: 0,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 60,
-        delay: 0.1,
-        when: "beforeChildren",
-      },
-    },
-  };
+  const { ref , inView } = useInView({
+    threshold: 0.3
+  });
+  const animation = useAnimation();
+  const slide = useAnimation();
+  const left = useAnimation()
 
-  const imageVariant = {
-    hidden: {
-      x: 200,
-      y: 100,
-      z: 100,
-      opacity: 0,
-    },
-    visible: {
-      x: 0,
-      y: 0,
-      z: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        ease: "linear",
-      },
-    },
-  };
-  
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }else {
-      controls.start("hidden");
+  useEffect(()=>{
+    if(inView){
+      left.start({
+        x: 0,
+        transition: {
+          ease: 'easeOut'
+        }
+      })
+      slide.start({
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: 'spring',
+          stiffness: 50
+        }
+      })
+      animation.start({
+        x: 0,
+        opacity: 1,
+        transition: {
+          type: 'spring',
+          stiffness: 50,
+        }
+      })
     }
-  }, [controls, inView]);
+    if(!inView){
+      left.start({
+        x: '-100vw'
+      })
+      slide.start({
+        y: '-100vw',
+        opacity: 0
+      })
+      animation.start({
+        x: '-100vw',
+        opacity: 0,
+      })
+    }
+  },[inView])
 
   return (
+    <motion.div ref={ref}>
     <motion.h1
-      ref={ref}
-      variants={headingVariant}
-      initial="hidden"
-      animate= "visible"
-      className="font-bold text-4xl mx-auto w-4/5 pt-16"
+      animate= {animation}
+      className="font-bold text-4xl mx-auto w-4/5 pt-20"
     >
       Does this sound familiar...
-      <motion.div ref={ref} variants={imageVariant} className=" inline-block ml-10 ">
+      <motion.div animate={slide} className=" inline-block ml-10 ">
         <Image src={slay} width={70} height={70} alt="" />
       </motion.div>
     </motion.h1>
+    </motion.div>
   );
 };
 

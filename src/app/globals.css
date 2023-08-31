@@ -10,6 +10,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.header{
+  background: #EEEBFE;
+}
+
 .introduction{
   background: #FAE8DC;
 }
@@ -21,3 +25,42 @@ body {
 .work{
   background: #F3F1FF;
 }
+
+.ahead{
+  color: #6442ED;
+}
+
+.timeline{
+  position: relative;
+  min-height: 150px;
+}
+
+.line{
+  position: absolute;
+  z-index: 2;
+  left: calc(50% - 1px);
+  width: 2px;
+  top: 0px;
+  bottom: -50px;
+  background-color: #BDBCF7;
+}
+
+.line:before,
+.line:after{
+  content: '';
+  position: absolute;
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background: #B3B8EE;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.line:after{
+  bottom: 0;
+}
+
+
+ 

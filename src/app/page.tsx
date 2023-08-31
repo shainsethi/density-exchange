@@ -9,12 +9,14 @@ import Testimonials from "./components/Testimonials/Testimonials";
 import Vacancies from "./components/Vacancies/Vacancies";
 import Work from "./components/Work/Work";
 import Carousel from "./components/carousel/carousel";
+import VerticalScrollBar from "./components/progress-bar/progress";
 
 
 
 export default function Home() {
   return (
     <main className="">
+      <VerticalScrollBar />
       <Navbar />
       <Header />
       <Beats />
@@ -27,7 +29,6 @@ export default function Home() {
       <Work />
       <Vacancies />
       <Footer />
-      
     </main>
   )
 }
