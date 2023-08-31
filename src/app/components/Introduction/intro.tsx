@@ -8,18 +8,31 @@ import { motion } from "framer-motion";
 const Intro = () => {
 
   const { ref , inView } = useInView({
-    threshold: 0.5
+    threshold: 0.2
   });
   const animation = useAnimation();
   const slide = useAnimation();
-  const left = useAnimation()
+  const left = useAnimation();
+  const down = useAnimation();
+  const right = useAnimation();
 
   useEffect(()=>{
     if(inView){
       left.start({
         x: 0,
+        opacity: 1,
         transition: {
-          ease: 'easeOut'
+          type: 'spring', 
+          stiffness: 60,
+        }
+      })
+      right.start({
+        x: 0,
+        opacity: 1,
+        transition: {
+          type: 'spring',
+          stiffness: 30,
+          delay: 0.5
         }
       })
       slide.start({
@@ -27,7 +40,8 @@ const Intro = () => {
         opacity: 1,
         transition: {
           type: 'spring',
-          stiffness: 50
+          stiffness: 40,
+          delay: 0.3
         }
       })
       animation.start({
@@ -35,13 +49,23 @@ const Intro = () => {
         opacity: 1,
         transition: {
           type: 'spring',
+          stiffness: 40,
+        }
+      })
+      down.start({
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: 'spring',
           stiffness: 50,
+          delay: 1.2
         }
       })
     }
     if(!inView){
       left.start({
-        x: '-100vw'
+        x: '-100vw',
+        opacity: 0
       })
       slide.start({
         y: '-100vw',
@@ -51,19 +75,28 @@ const Intro = () => {
         x: '-100vw',
         opacity: 0,
       })
+      down.start({
+        y: '200px',
+        opacity: 0,
+      })
+      right.start({
+        x: '100vw',
+        opacity: 0
+      })
     }
   },[inView])
 
   return (
-    <div ref={ref} className="container rounded-3xl w-11/12 mx-auto mt-16 flex justify-between items-center py-12 introduction px-20">
-      <div className="heading pt-16 w-2/4 px-8 relative ">
-        <motion.div animate={left} exit={{ x: -300 , opacity: 0  }} className="text-base text-black font-semibold ">
+    <motion.div ref={ref}>
+    <div  className="container rounded-3xl w-11/12 mx-auto mt-28 flex justify-between items-center py-12 introduction px-20">
+      <div className="heading pt-10 w-2/4 px-8 relative ">
+        <motion.div animate={left} exit={{ x: -300 , opacity: 0  }} className="text-lg text-black font-semibold ">
           Built out of frustation
         </motion.div>
-        <motion.h1 animate={slide} exit={{ x: -300, opacity: 0 }} className="text-black font-bold text-5xl pt-2 ">
+        <motion.h1 animate={slide} exit={{ x: -300, opacity: 0 }} className="text-black font-bold text-5xl pt-4 ">
           Meet the ahead app
         </motion.h1>
-        <motion.div className=""  animate={animation}  exit={{ x: -300, opacity: 0 }}>
+        <motion.div className=""  animate={down}  exit={{ x: 300, opacity: 0 }}>
           <Image 
             src="/assets/Saly-31.png"
             width={500}
@@ -81,23 +114,22 @@ const Intro = () => {
           </svg>
         </div>
       </div>
-      <motion.div animate={animation}  exit={{ x: -300, opacity: 0 }} className="Description w-2/4 text-xl text-gray-600 font-normal leading-relaxed">
+      <motion.div animate={right}  exit={{ x: -300, opacity: 0 }} className="Description w-2/4 text-xl text-gray-600 font-normal leading-relaxed pl-20">
         <div className=" mb-4">
           <Image src="/assets/Saly-27.png" width={400} height={200} alt=""></Image>
         </div>
         <p className="pt-3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
+          ipsum dolor sit amet, 
         </p>
-        <p>
+        <p className="pt-3">
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officiaLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          officiaLorem ipsum dolor sit amet, 
         </p>
       </motion.div>
     </div>
+    </motion.div>
   );
 };
 

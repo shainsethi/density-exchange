@@ -22,7 +22,7 @@ function Carousel() {
         transition: {
           type: 'spring',
           stiffness: 20,
-          delay: 0.7,
+          delay: 0.5,
           duration: 2,
         }
       })
