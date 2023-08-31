@@ -22,7 +22,6 @@ const Header = () => {
               <span>Download on App Store</span>
             </div>
           </button>
-          <div></div>
         </div>
       </motion.div>
       <motion.div className="right-side -rotate-12 translate-y-12 pb-6 ml-4">

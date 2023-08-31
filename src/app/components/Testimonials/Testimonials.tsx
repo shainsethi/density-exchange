@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 const Testimonials = () => {
@@ -6,7 +7,7 @@ const Testimonials = () => {
        <h5 className='text-xl font-semibold text-black text-center mx-auto tracking-wider'>Let your friends,family, and co-workers rate your skills.</h5>
        <h1 className=' pt-4 text-5xl text-black font-bold text-center mx-auto'>Ever wondered what others think of you</h1>
        <div className='progress-bar'>
-
+          
        </div>
     </div>
   )

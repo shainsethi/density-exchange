@@ -17,49 +17,40 @@ const Improvement = () => {
         </h1>
       </div>
       <div className="timeline">
-        <div className="line"></div>
-        <div className="ml-auto w-3/4 pt-6">
-          <div className="pb-4">
+        <div className="line "></div>
+        <div className="ml-auto w-3/4 mt-8">
+          <div className="pb-10">
             <h3 className="text-black font-bold text-2xl">
               it's not as easy as 1-2-3
             </h3>
-            <p className="text-black font-normal text-xl w-4/5 pt-4">
+            <p className="text-black font-normal text-lg w-4/5 pt-2">
               The journey of change may be long , but our sessions are quick. We
               get to point and tell you do what you wanna do
             </p>
           </div>
-          <div className="pb-4">
+          <div className="pb-10">
             <h3 className="text-black font-bold text-2xl">
               it's not as easy as 1-2-3
             </h3>
-            <p className="text-black font-normal text-xl w-4/5 pt-4">
+            <p className="text-black font-normal text-lg w-4/5 pt-2">
               The journey of change may be long , but our sessions are quick. We
               get to point and tell you do what you wanna do
             </p>
           </div>
-          <div className="pb-4">
+          <div className="pb-10">
             <h3 className="text-black font-bold text-2xl">
               it's not as easy as 1-2-3
             </h3>
-            <p className="text-black font-normal text-xl w-4/5 pt-4">
+            <p className="text-black font-normal text-lg w-4/5 pt-2">
               The journey of change may be long , but our sessions are quick. We
               get to point and tell you do what you wanna do
             </p>
           </div>
-          <div className="pb-4">
+          <div className="pb-10">
             <h3 className="text-black font-bold text-2xl">
               it's not as easy as 1-2-3
             </h3>
-            <p className="text-black font-normal text-xl w-4/5 pt-4">
-              The journey of change may be long , but our sessions are quick. We
-              get to point and tell you do what you wanna do
-            </p>
-          </div>
-          <div className="pb-4">
-            <h3 className="text-black font-bold text-2xl">
-              it's not as easy as 1-2-3
-            </h3>
-            <p className="text-black font-normal text-xl w-4/5 pt-4">
+            <p className="text-black font-normal text-lg w-4/5 pt-2">
               The journey of change may be long , but our sessions are quick. We
               get to point and tell you do what you wanna do
             </p>
