@@ -66,7 +66,7 @@ const Vacancies = () => {
         Open vacancies
       </motion.h1>
       <motion.div animate={slide} className="flex justify-center items-center pt-10 gap-16 mx-auto">
-        <div className="w-1/3 h-40 bg-fuchsia-100 p-6 rounded-3xl">
+        <div className="w-1/3 h-40 bg-fuchsia-100 p-6 rounded-3xl pb-3">
           <h5 className="text-basic pl-3 text-black font-bold">
             Senior Full-Stack Engineer
           </h5>
@@ -82,7 +82,7 @@ const Vacancies = () => {
             </li>
           </ul>
         </div>
-        <div className="w-1/3 h-40 bg-fuchsia-100 p-6 rounded-3xl">
+        <div className="w-1/3 h-40 bg-fuchsia-100 p-6 rounded-3xl pb-3">
           <h5 className="text-basic pl-3 text-black font-bold">
             Senior Full-Stack Engineer
           </h5>
@@ -98,7 +98,7 @@ const Vacancies = () => {
             </li>
           </ul>
         </div>
-        <div className="w-1/3 h-40 bg-fuchsia-100 p-6 rounded-3xl">
+        <div className="w-1/3 h-40 bg-fuchsia-100 p-6 rounded-3xl pb-3">
           <h5 className="text-basic pl-3 text-black font-bold">
             Senior Full-Stack Engineer
           </h5>
