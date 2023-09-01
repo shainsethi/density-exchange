@@ -16,7 +16,7 @@ const Beats = () => {
         x: 0,
         transition: {
           type: 'spring',
-           stiffness: 40
+           stiffness: 30
         }
       })
     }

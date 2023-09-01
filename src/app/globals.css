@@ -9,6 +9,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  overflow-x:hidden;
 }
 
 hr{
@@ -64,7 +65,20 @@ hr{
 }
 
 .line:after{
-  top: 145px;
+  bottom: 110px;
+}
+
+.bar{
+  position: absolute;
+  z-index: 0;
+  width: 69%;
+  top: 24px;
+  left: 16%;
+  bottom: 0px;
+  height: 10px;
+  background-color: #BDBCF7;
+  transform: translateY(40%);
+  right: 0px;
 }
 
 

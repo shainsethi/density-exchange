@@ -15,7 +15,7 @@ import VerticalScrollBar from "./components/progress-bar/progress";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="wrapper  ">
       <VerticalScrollBar />
       <Navbar />
       <Header />
@@ -27,7 +27,7 @@ export default function Home() {
       <Testimonials />
       <Privacy />
       <Work />
-      <Vacancies />
+      <Vacancies /> 
       <Footer />
     </main>
   )

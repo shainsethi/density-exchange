@@ -77,7 +77,7 @@ const Intro = () => {
         opacity: 0,
       })
       down.start({
-        y: '200px',
+        y: '120px',
         opacity: 0,
       })
       right.start({
