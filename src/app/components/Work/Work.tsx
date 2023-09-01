@@ -70,6 +70,7 @@ const Work = () => {
             opacity: 0,
           })
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       },[inView])
 
   return (
@@ -82,7 +83,7 @@ const Work = () => {
             <h4 className="text-3xl font-bold text-black py-2">About</h4>
             <p className="text-lg text-gray-500 font-normal">
               At ahead our goal is to make self-improvement fun and lasting. We
-              know there's a way how to make it work and that's what Ahead is
+              know {" there's "} a way how to make it work and {" that's "} what Ahead is
               all about
             </p>
           </div>

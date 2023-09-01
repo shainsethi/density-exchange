@@ -57,6 +57,7 @@ const Improvement = () => {
         opacity: 0,
       })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[inView])
 
 
@@ -64,7 +65,7 @@ const Improvement = () => {
     <motion.div ref={ref} className="container py-20 pb-32 mt-8">
       <motion.div animate={left} className="heading mx-auto w-4/5">
         <span className="font-semibold text-lg text-black">
-          Wrong with self-improvement & how we're fixing it
+          Wrong with self-improvement & how {"we're"} fixing it
         </span>
         <h1 className="text-black font-bold text-5xl flex justify-start items-center">
           Self Improvement. Ugh.
@@ -78,7 +79,7 @@ const Improvement = () => {
         <motion.div animate={slide} className="ml-auto w-3/4 mt-8">
           <div className="pb-10">
             <h3 className="text-black font-bold text-2xl">
-              it's not as easy as 1-2-3
+              {"it's"} not as easy as 1-2-3
             </h3>
             <p className="text-black font-normal text-lg w-4/5 pt-2">
               The journey of change may be long , but our sessions are quick. We
@@ -87,7 +88,7 @@ const Improvement = () => {
           </div>
           <div className="pb-10">
             <h3 className="text-black font-bold text-2xl">
-              it's not as easy as 1-2-3
+              {"it's"} not as easy as 1-2-3
             </h3>
             <p className="text-black font-normal text-lg w-4/5 pt-2">
               The journey of change may be long , but our sessions are quick. We

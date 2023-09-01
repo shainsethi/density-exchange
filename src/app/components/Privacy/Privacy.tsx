@@ -28,6 +28,7 @@ const Privacy = () => {
         opacity: 0,
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView]);
 
   return (
@@ -40,8 +41,7 @@ const Privacy = () => {
           Before you get started
         </h1>
         <h3 className=" text-base text-black w-1/3 mx-auto ">
-          "We won't share your answers with anyone and won't ever tell you which
-          friends said what about you"
+         {" We won't share your answers with anyone and won't ever tell you which friends said what about you "}
         </h3>
         <h5 className="text-xl text-black font-bold py-8">with love</h5>
         <button

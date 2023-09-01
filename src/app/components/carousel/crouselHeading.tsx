@@ -57,7 +57,8 @@ const CrouselHeading = () => {
         opacity: 0,
       })
     }
-  },[inView , animation , left , slide])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[inView])
 
   return (
     <motion.div ref={ref}>

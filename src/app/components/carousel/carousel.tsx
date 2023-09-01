@@ -33,7 +33,8 @@ function Carousel() {
         opacity: 0
       })
     }
-  }, [inView , left])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView])
 
   return (
     <motion.div className="pt-4" ref={ref}>
