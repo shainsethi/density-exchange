@@ -12,7 +12,7 @@ function Carousel() {
     threshold: 0.4
   });
 
-  const left = useAnimation()
+  const left: any = useAnimation()
 
   useEffect(()=>{
     if(inView){
@@ -21,7 +21,7 @@ function Carousel() {
         opacity: 1,
         transition: {
           type: 'spring',
-          stiffness: 20,
+          stiffness: 30,
           delay: 0.5,
           duration: 2,
         }
@@ -33,7 +33,7 @@ function Carousel() {
         opacity: 0
       })
     }
-  },[inView])
+  }, [inView , left])
 
   return (
     <motion.div className="pt-4" ref={ref}>

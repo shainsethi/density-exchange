@@ -57,7 +57,7 @@ const CrouselHeading = () => {
         opacity: 0,
       })
     }
-  },[inView])
+  },[inView , animation , left , slide])
 
   return (
     <motion.div ref={ref}>
